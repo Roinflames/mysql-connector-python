@@ -12,13 +12,11 @@ cursor = conexion.cursor()
 
 # Ejecutar la creación de la tabla
 cursor.execute("""
-CREATE TABLE IF NOT EXISTS usuarios (
+CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    email VARCHAR(150) NOT NULL UNIQUE,
-    contraseña VARCHAR(255) NOT NULL,
-    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    activo BOOLEAN DEFAULT TRUE
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    rol ENUM('Administrador', 'MandosMedios', 'Gerencia') NOT NULL
 );
 """)
 

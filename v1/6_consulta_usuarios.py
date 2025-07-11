@@ -14,7 +14,9 @@ cursor = conexion.cursor()
 cursor.execute("SELECT * FROM usuarios")
 
 # Obtener resultados
-resultados = cursor.fetchall()
+resultados = cursor.fetchall() # Obtener todas las filas
+# resultados = cursor.fetchone() # Obtener una sola fila
+# resultados = cursor.fetchmany(5) # Obtener un número específico de filas
 
 for fila in resultados:
     print(fila)

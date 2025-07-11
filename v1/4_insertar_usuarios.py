@@ -12,11 +12,11 @@ cursor = conexion.cursor()
 
 # Insertar un usuario
 sql = """
-INSERT INTO usuarios (nombre, email, contraseña, activo) 
-VALUES (%s, %s, %s, %s)
+INSERT INTO usuarios (username, password_hash, rol) 
+VALUES (%s, %s, %s)
 """
 
-valores = ("Rodrigo Reyes", "rodrigo@example.com", "mi_contraseña_segura", True)
+valores = ("rodrigo", "123456", "Administrador")
 
 cursor.execute(sql, valores)
 
