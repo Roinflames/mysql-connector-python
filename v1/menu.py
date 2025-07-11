@@ -1,6 +1,6 @@
-import mysql.connector
-import bcrypt
-import getpass
+import mysql.connector # Para conectar Python y BDD
+import bcrypt # Para encriptar contraseñas
+import getpass # Para ocultar la entrada de contraseñas
 
 def conectar():
     return mysql.connector.connect(
